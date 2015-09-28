@@ -1,0 +1,75 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/usuariomac/.nvm/v0.10.38/bin/node',
+1 verbose cli   '/Users/usuariomac/.nvm/v0.10.38/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-save',
+1 verbose cli   'backbonejs' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.38
+4 warn package.json BackboneApp@1.0.0 No description
+5 warn package.json BackboneApp@1.0.0 No repository field.
+6 warn package.json BackboneApp@1.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'backbonejs', null ]
+9 verbose cache add name=undefined spec="backbonejs" args=["backbonejs",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'backbonejs',
+10 verbose parsed url   path: 'backbonejs',
+10 verbose parsed url   href: 'backbonejs' }
+11 silly lockFile f1752bd6-backbonejs backbonejs
+12 verbose lock backbonejs /Users/usuariomac/.npm/f1752bd6-backbonejs.lock
+13 silly lockFile f1752bd6-backbonejs backbonejs
+14 silly lockFile f1752bd6-backbonejs backbonejs
+15 verbose addNamed [ 'backbonejs', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile 0f387d9b-backbonejs backbonejs@
+18 verbose lock backbonejs@ /Users/usuariomac/.npm/0f387d9b-backbonejs.lock
+19 silly addNameRange { name: 'backbonejs', range: '*', hasData: false }
+20 verbose request where is /backbonejs
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id 8b65c81eff6d393d
+23 verbose url raw /backbonejs
+24 verbose url resolving [ 'https://registry.npmjs.org/', './backbonejs' ]
+25 verbose url resolved https://registry.npmjs.org/backbonejs
+26 verbose request where is https://registry.npmjs.org/backbonejs
+27 info trying registry request attempt 1 at 21:33:13
+28 http GET https://registry.npmjs.org/backbonejs
+29 http 404 https://registry.npmjs.org/backbonejs
+30 silly registry.get cb [ 404,
+30 silly registry.get   { 'content-type': 'application/json',
+30 silly registry.get     'cache-control': 'max-age=0',
+30 silly registry.get     'content-length': '2',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     date: 'Mon, 28 Sep 2015 02:33:14 GMT',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     age: '0',
+30 silly registry.get     connection: 'keep-alive',
+30 silly registry.get     'x-served-by': 'cache-iad2136-IAD',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1443407594.562195,VS0,VE377' } ]
+31 silly lockFile 0f387d9b-backbonejs backbonejs@
+32 silly lockFile 0f387d9b-backbonejs backbonejs@
+33 error 404 Not Found
+33 error 404
+33 error 404 'backbonejs' is not in the npm registry.
+33 error 404 You should bug the author to publish it
+33 error 404 It was specified as a dependency of 'BackboneApp'
+33 error 404
+33 error 404 Note that you can also install from a
+33 error 404 tarball, folder, or http url, or git url.
+34 error System Darwin 14.5.0
+35 error command "/Users/usuariomac/.nvm/v0.10.38/bin/node" "/Users/usuariomac/.nvm/v0.10.38/bin/npm" "install" "-save" "backbonejs"
+36 error cwd /Users/usuariomac/learning/BackboneApp
+37 error node -v v0.10.38
+38 error npm -v 1.4.28
+39 error code E404
+40 verbose exit [ 1, true ]
