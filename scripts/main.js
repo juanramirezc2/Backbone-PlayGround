@@ -1,25 +1,27 @@
-var Mymodel = Backbone.Model.extend({
-  promtcolor : () => {
-    var cssColor = prompt("Please enter a Css Color");
-    this.set({color : cssColor});
+var singleTodo = Backbone.Model.extend({
+  initialize: function(){
+    console.log(this);
+    this.set({title : "",message : "", completion: false});
   }
 });
-var sidebar = new Mymodel();
-sidebar.on('change:color', (model,color) => {
-  console.log(model);
-  console.log("gabo");
-  console.log(color);
+var todos = Backbone.Collection.extend({
+  model : singleTodo,
+  initialize : function(){
+   console.log("my first colection",this);
+  }
 });
-var myFirstCol = Backbone.Collection.extend({
-  model : Mymodel
-});
-var CssColors = new myFirstCol();
-CssColors.on('add',(param1) => {
-  console.log(param1.get('color'));
-});
-sidebar.promtcolor();
 
-CssColors.add([{color:'gray'},{color:'black'},{color:'blue'}]);
+var todosView = Backbone.View.extend({
+  className:"todoApp",
+  initialize : function(){
+  console.log(this.$el.innerHTML="todo list single page app");
+  }
+});
+var todosTEmplate = new todosView();
+
+var todoList = new todos();
+todoList.add([{title : "todo 1",message : "este es mi primer todo"}, {title : "todo 2",message : "este es mi segundo todo"}]);
+
 var emptyObj ={};
 var emptyListener = {};
 Object.assign(emptyObj,Backbone.Events);
