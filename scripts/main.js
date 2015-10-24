@@ -12,12 +12,17 @@ var todos = Backbone.Collection.extend({
 });
 
 var todosView = Backbone.View.extend({
-  className:"todoApp",
+  render : function(){
+    console.log("my view ", this);
+  },
   initialize : function(){
-  console.log(this.$el.innerHTML="todo list single page app");
+    this.render();
   }
 });
-var todosTEmplate = new todosView();
+var todosTEmplate = new todosView({
+  tagName : "span",
+  className : "thisClass"
+});
 
 var todoList = new todos();
 todoList.add([{title : "todo 1",message : "este es mi primer todo"}, {title : "todo 2",message : "este es mi segundo todo"}]);
