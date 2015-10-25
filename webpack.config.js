@@ -1,9 +1,9 @@
 module.exports = {
   entry: {
     app:'./scripts/main.js',
-    vendor:['backbone','jquery']
+    vendor:['backbone','jquery','underscore']
   },
   output: {
-    filename: '[name].js'
+    filename: './public/[name].js'
   }
 };
