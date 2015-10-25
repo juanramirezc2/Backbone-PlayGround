@@ -1,0 +1,14 @@
+.flex{
+  display:flex;
+  border:solid mistyrose 2px;
+  height: 400px ;
+  flex-wrap:wrap;
+  align-content:center;
+  justify-content:center;
+}
+.flexItem{
+  width: 33%;
+  font-size: 30px;
+  border: solid 2px black;
+  background-color: blue;
+}
