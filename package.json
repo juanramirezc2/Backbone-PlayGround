@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "backbone": "^1.2.3"
+    "backbone": "^1.2.3",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "jquery": "^2.1.4",
