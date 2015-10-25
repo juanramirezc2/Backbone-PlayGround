@@ -1,42 +1,60 @@
+var $ = require("jquery");
+var _ = require("underscore");
+
 var singleTodo = Backbone.Model.extend({
+  defaults : {title : "",message : "", completion: false},
   initialize: function(){
-    console.log(this);
-    this.set({title : "",message : "", completion: false});
+    //console.log(this);
   }
 });
 var todos = Backbone.Collection.extend({
   model : singleTodo,
   initialize : function(){
-   console.log("my first colection",this);
+   //console.log("my first colection",this);
   }
 });
-
 var todosView = Backbone.View.extend({
+  tagName : "div",
+  className : "thisClass",
+  id : "ID",
+  template :  _.template("<input type='checkbox' name='completion'> <%= title %>,message <%= message %> , completion <%= completion %>"),
   render : function(){
-    console.log("my view ", this);
+    this.$el.html(this.template(this.model.attributes));
+    return this;
   },
   initialize : function(){
     this.render();
   }
 });
-var todosTEmplate = new todosView({
-  tagName : "span",
-  className : "thisClass"
-});
 
 var todoList = new todos();
-todoList.add([{title : "todo 1",message : "este es mi primer todo"}, {title : "todo 2",message : "este es mi segundo todo"}]);
+todoList.add([{title : "todo title",message : "este es mi primer todo"}, {title : "todo title 2",message : "este es mi segundo todo"}]);
+
+var todosColView = Backbone.View.extend({
+  el : '#todoApp',
+  initialize : function(){
+    this.render();
+  },
+  render : function(){
+      todoList.each((modelSingle) => {
+      var singleView = new todosView({model : modelSingle});
+      this.el.appendChild(singleView.el);
+    }); 
+  }
+});
+
+var instodosCol = new todosColView();
 
 var emptyObj ={};
 var emptyListener = {};
 Object.assign(emptyObj,Backbone.Events);
 Object.assign(emptyListener,Backbone.Events);
 
-console.log(emptyObj);
+//console.log(emptyObj);
 
 setTimeout(()=>{
   for (var i = 0;i<= 10;i++) {
-    console.log(i);
+    //console.log(i);
     emptyObj.trigger("seJodio","HHHHHHHHHH");
     if(i===3)
       emptyListener.stopListening(emptyObj);
@@ -52,7 +70,7 @@ setTimeout(()=>{
   */
 
 emptyListener.listenTo(emptyObj,"seJodio",(msn)=>{
-  console.log(msn);
+  //console.log(msn);
 }); 
 
 
