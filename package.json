@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "backbone": "^1.2.3",
+    "react": "^0.14.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
