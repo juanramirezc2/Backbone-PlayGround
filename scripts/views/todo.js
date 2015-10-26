@@ -1,4 +1,5 @@
 var _ = require("underscore");
+var React = require("react");
 var todosColView = Backbone.View.extend({
   el : '#todoApp',
   initialize : function(){
