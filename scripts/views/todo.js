@@ -2,20 +2,6 @@ var _ = require("underscore");
 var React = require("react");
 var ReactDom = require("react-dom");
 
-var todosColView = Backbone.View.extend({
-  el : '#todoApp',
-  initialize : function(){
-    console.log(this);
-    this.render();
-  },
-  render : function(){
-      this.collection.each((modelSingle) => {
-      var singleView = new todosView({model : modelSingle});
-      this.el.appendChild(singleView.el);
-    });
-  }
-});
-
 var todosView = Backbone.View.extend({
   tagName : "div",
   className : "thisClass",
@@ -48,5 +34,4 @@ var todosView = Backbone.View.extend({
     this.render();
   }
 });
-
-module.exports = todosColView;
+module.exports = todosView;
