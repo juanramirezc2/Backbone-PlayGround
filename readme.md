@@ -1,9 +1,10 @@
-run the command below to get the webpack server installed
+# instalation
+Run the command below to get the webpack server installed
 
 ## Webpack dev server
 ``` sh 
+  npm install 
   npm install webpack-dev-server --global
-  npm install webpack-dev-server --save-dev
   ```
 
 ## Hot module replacement
