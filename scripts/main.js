@@ -1,63 +1,18 @@
-var $ = require("jquery");
-var todo = require("./model/todo");
-var todos = require("./collections/todo");
-var taskView = require("./views/todo");
 var React = require("react");
-var ReactDom = require("react-dom");
+var ReactDOM = require("react-dom");
 
-/*playing with react */
-
-/*
-
-class otherComponent extends React.Component{
-  render(){
-   return <h3>compo</h3>;
-  }
+class SubComponent extends React.Component {
+ render(){
+  return <h2>always upercase names for your react components,at least if you dont want to render an html string</h2>;
+ }
 }
-class myComponent extends React.Component{
-  render(){
-    return <otherComponent />;
-  }
-}
-*/
-
-ReactDom.render(<jg/>,document.getElementById('reactComponent'))
-
-var jg= React.createClass({
+var App = React.createClass({
   render : function(){
-    return (
-      <div>
-        hola  mundo desde un react component
-      </div>
-    )
+    return  (<div>{this.props.name} hola  mundo desde un react compon<SubComponent/></div> );
   }
 });
-/*
-var emptyObj ={};
-var emptyListener = {};
-Object.assign(emptyObj,Backbone.Events);
-Object.assign(emptyListener,Backbone.Events);
-setTimeout(()=>{
-  for (var i = 0;i<= 10;i++) {
-    //console.log(i);
-    emptyObj.trigger("seJodio","HHHHHHHHHH");
-    if(i===3)
-      emptyListener.stopListening(emptyObj);
-  }},3000);
 
-emptyObj.bind("seJodio",(param)=>{
-  console.log(param);
-});
-emptyObj.once("seJodio",(msn)=>{
-    console.log(msn);
-}); 
+ReactDOM.render(<App name="gabo" />,document.getElementById('reactComponent'));
 
-
-emptyListener.listenTo(emptyObj,"seJodio",(msn)=>{
-  console.log(msn);
-}); 
-
-
-emptyObj.on("change",(el)=>{console.log(el)}); 
-
-emptyObj.gabo="fds"; */
+var myDivElement = <div className="foo" />;
+ReactDOM.render(myDivElement, document.getElementById('test'));

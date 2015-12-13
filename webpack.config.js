@@ -6,6 +6,10 @@ module.exports = {
   output: {
     filename: './public/[name].js'
   },
+  devServer:{
+    inline:true,
+    port:3333
+  },
   module:{
     loaders: [{
       test : /\.js$/,
