@@ -2,27 +2,36 @@ var $ = require("jquery");
 var todo = require("./model/todo");
 var todos = require("./collections/todo");
 var taskView = require("./views/todo");
+var React = require("react");
+var ReactDom = require("react-dom");
 
-var todosApp = Backbone.View.extend({
-  el : '#todoApp',
-  initialize:function(){
-    var todosCol = new todos({model : todo});
-    this.listenTo(this.todosCol,"add",this.renderTask);
-    this.listenTo(this.todosCol,"remove",this.deleteTask);
-    todosCol.add({title : "task",message : "message", completion: "checked"});
-  },
-  render: function(){
-    this.todosCol.each((modelSingle) => {
-      var singleView = new taskView({model : modelSingle});
-      this.el.appendChild(singleView.el);
-    });
-  },
-  events : {}
+/*playing with react */
+
+/*
+
+class otherComponent extends React.Component{
+  render(){
+   return <h3>compo</h3>;
+  }
+}
+class myComponent extends React.Component{
+  render(){
+    return <otherComponent />;
+  }
+}
+*/
+
+ReactDom.render(<jg/>,document.getElementById('reactComponent'))
+
+var jg= React.createClass({
+  render : function(){
+    return (
+      <div>
+        hola  mundo desde un react component
+      </div>
+    )
+  }
 });
-
-var  app = new todosApp();
-
-
 /*
 var emptyObj ={};
 var emptyListener = {};
